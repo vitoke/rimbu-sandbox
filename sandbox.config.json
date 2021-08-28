@@ -1,0 +1,8 @@
+{
+  "infiniteLoopProtection": true,
+  "hardReloadOnChange": false,
+  "view": "split",
+  "previewwindow": "console",
+  "editorsize": 60,
+  "moduleview": true
+}

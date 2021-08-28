@@ -1,0 +1,16 @@
+{
+  "name": "rimbu-sandbox",
+  "version": "1.0.0",
+  "description": "A Sandbox demonstrating the Rimbu core library",
+  "dependencies": {
+    "@rimbu/core": "0.7.3",
+    "@rimbu/typical": "0.2.0"
+  },
+  "devDependencies": {
+    "typescript": "4.3.2"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": []
+}
