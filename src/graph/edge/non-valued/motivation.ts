@@ -1,5 +1,6 @@
 import { EdgeGraphSorted } from "@rimbu/core";
 import { log, subject } from "../../../utils/log";
+
 type Cat = "Alice" | "Bob" | "Carol";
 
 // create a graph where each bidirectional edge indicates that

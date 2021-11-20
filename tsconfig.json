@@ -12,8 +12,6 @@
     ],
     "rootDir": "src",
     "moduleResolution": "node",
-    "noStrictGenericChecks": true,
-    "skipLibCheck": true,
     "downlevelIteration": true
   }
 }
