@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Sandbox demonstrating the Rimbu core library",
   "dependencies": {
-    "@rimbu/core": "0.8.0",
+    "@rimbu/core": "0.8.3",
     "@rimbu/typical": "0.3.0"
   },
   "devDependencies": {
