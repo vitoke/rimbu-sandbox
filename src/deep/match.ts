@@ -1,4 +1,4 @@
-import { Match } from "@rimbu/deep";
+import { match } from "@rimbu/deep";
 import { log, subject } from "../utils/log";
 
 const person = {
@@ -11,35 +11,38 @@ const person = {
   friends: ["Bob", "Carol"]
 };
 
-const isAge34 = Match.any(person)({ age: 34 });
+// if CodeSandbox gives type errors below,
+// it does not yet have TypeScript > 4.6 built in
 
-const isAgeOver40 = Match.any(person)({
+const isAge34 = match(person, { age: 34 });
+
+const isAgeOver40 = match(person, {
   age: (v) => v >= 40
 });
 
-const isStreetNumberLessThanAge = Match.any(
-  person
-)({
+const isStreetNumberLessThanAge = match(person, {
   address: {
     number: (value, _, root) => value < root.age
   }
 });
 
-const ageOver40OrNameAlice = Match.any(person)(
+const ageOver40OrNameAlice = match(
+  person,
   { age: (v) => v > 40 },
   { name: "Alice" }
 );
 
-const ageOver40AndNameAlice = Match.all(person)(
+const ageOver40AndNameAlice = match(
+  person,
   { age: (v) => v > 40 },
   { name: "Alice" }
 );
 
-const secondFriendIsCarol = Match.any(person)({
+const secondFriendIsCarol = match(person, {
   friends: { 1: "Carol" }
 });
 
-subject("Match object");
+subject("match object");
 log({
   person,
   isAge34,

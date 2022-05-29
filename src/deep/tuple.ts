@@ -1,15 +1,12 @@
-import {
-  Immutable,
-  Tuple,
-  patch
-} from "@rimbu/deep";
+import { Protected, Tuple } from "@rimbu/deep";
 import { log, subject } from "../utils/log";
 
-const personAge1 = Immutable(["John", 25]);
+const personAge1 = Protected(["John", 25]);
+
 // inferred type (too loose):
 // readonly (string | number)[]
 
-const personAge2 = Immutable([
+const personAge2 = Protected([
   "John",
   25
 ] as const);
@@ -17,14 +14,16 @@ const personAge2 = Immutable([
 // readonly ['John', 25]
 // we cannot set other values
 
-const personAge3 = Immutable(
-  Tuple.of("John", 25)
-);
+const personAge3 = Tuple.of("John", 25);
 // inferred type (correct):
 // readonly [string, number]
 
 // tuples, like arrays, can be adressed by index:
-const personAge4 = patch(personAge3)({ 1: 27 });
+const personAge4 = Tuple.updateAt(
+  personAge3,
+  1,
+  27
+);
 // => { values: ["John", 27] }
 
 const personExtended = Tuple.append(
@@ -32,6 +31,7 @@ const personExtended = Tuple.append(
   true,
   1
 );
+// => type is readonly [string, number, boolean, number]
 
 subject("Tuple");
 log({
