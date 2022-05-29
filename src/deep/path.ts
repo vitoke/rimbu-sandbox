@@ -1,4 +1,4 @@
-import { Path } from "@rimbu/deep";
+import { Path, Patch } from "@rimbu/deep";
 import { log, subject } from "../utils/log";
 
 const person = {
@@ -10,20 +10,23 @@ const person = {
   }
 };
 
-const getAge = Path.getValue(person, "age");
+// if CodeSandbox gives type errors below,
+// it does not yet have TypeScript > 4.6 built in
 
-const getStreet = Path.getValue(
+const getAge = Path.get(person, "age");
+
+const getStreet = Path.get(
   person,
   "address.street"
 );
 
-const updateAddress1 = Path.patchValue(
+const updateAddress1 = Path.update(
   person,
   "address",
-  { number: (value) => value + 1 }
+  Patch.create({ number: (value) => value + 1 })
 );
 
-const updateAddress2 = Path.patchValue(
+const updateAddress2 = Path.update(
   person,
   "address.number",
   (value) => value + 1
