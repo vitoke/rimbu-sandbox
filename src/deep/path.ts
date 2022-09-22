@@ -1,4 +1,4 @@
-import { Path, Patch } from "@rimbu/deep";
+import { Deep } from "@rimbu/core";
 import { log, subject } from "../utils/log";
 
 const person = {
@@ -10,23 +10,20 @@ const person = {
   }
 };
 
-// if CodeSandbox gives type errors below,
-// it does not yet have TypeScript > 4.6 built in
+const getAge = Deep.getAt(person, "age");
 
-const getAge = Path.get(person, "age");
-
-const getStreet = Path.get(
+const getStreet = Deep.getAt(
   person,
   "address.street"
 );
 
-const updateAddress1 = Path.update(
+const updateAddress1 = Deep.patchAt(
   person,
   "address",
-  Patch.create({ number: (value) => value + 1 })
+  [{ number: (value) => value + 1 }]
 );
 
-const updateAddress2 = Path.update(
+const updateAddress2 = Deep.patchAt(
   person,
   "address.number",
   (value) => value + 1

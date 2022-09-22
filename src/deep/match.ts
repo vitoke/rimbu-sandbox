@@ -1,4 +1,4 @@
-import { match } from "@rimbu/deep";
+import { Deep } from "@rimbu/core";
 import { log, subject } from "../utils/log";
 
 const person = {
@@ -11,34 +11,29 @@ const person = {
   friends: ["Bob", "Carol"]
 };
 
-// if CodeSandbox gives type errors below,
-// it does not yet have TypeScript > 4.6 built in
+const isAge34 = Deep.match(person, { age: 34 });
 
-const isAge34 = match(person, { age: 34 });
-
-const isAgeOver40 = match(person, {
+const isAgeOver40 = Deep.match(person, {
   age: (v) => v >= 40
 });
 
-const isStreetNumberLessThanAge = match(person, {
+const isStreetNumberLessThanAge = Deep.match(person, {
   address: {
     number: (value, _, root) => value < root.age
   }
 });
 
-const ageOver40OrNameAlice = match(
+const ageOver40OrNameAlice = Deep.match(
   person,
-  { age: (v) => v > 40 },
-  { name: "Alice" }
+  ['some', { age: (v) => v > 40 }, { name: "Alice" }]
 );
 
-const ageOver40AndNameAlice = match(
+const ageOver40AndNameAlice = Deep.match(
   person,
-  { age: (v) => v > 40 },
-  { name: "Alice" }
+  ['every', { age: (v) => v > 40 }, { name: "Alice" }]
 );
 
-const secondFriendIsCarol = match(person, {
+const secondFriendIsCarol = Deep.match(person, {
   friends: { 1: "Carol" }
 });
 
