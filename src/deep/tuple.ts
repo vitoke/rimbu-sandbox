@@ -1,12 +1,11 @@
-import { Protected, Tuple } from "@rimbu/deep";
+import { Deep, Tuple } from "@rimbu/core";
 import { log, subject } from "../utils/log";
 
-const personAge1 = Protected(["John", 25]);
-
+const personAge1 = Deep.protect(["John", 25]);
 // inferred type (too loose):
 // readonly (string | number)[]
 
-const personAge2 = Protected([
+const personAge2 = Deep.protect([
   "John",
   25
 ] as const);

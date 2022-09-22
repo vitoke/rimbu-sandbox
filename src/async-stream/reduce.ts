@@ -13,10 +13,12 @@ const stream = AsyncStream.from(values.toArray());
 async function doAsync() {
   // calculate all in one pass
   const [
+    streamToArray,
     contains5,
     allOver8,
     minValue
   ] = await stream.reduceAll(
+    AsyncReducer.from(Reducer.toArray()),
     AsyncReducer.from(Reducer.contains(5)),
     AsyncReducer.from(
       Reducer.every((v) => v > 8)
@@ -26,7 +28,7 @@ async function doAsync() {
 
   subject("Query Stream");
   log({
-    streamToArray: stream.toArray(),
+    streamToArray,
     contains5,
     allOver8,
     minValue
