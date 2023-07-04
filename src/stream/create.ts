@@ -1,5 +1,5 @@
 import { Stream } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const streamFromValues = Stream.of(1, 3, 2, 4);
 const streamFromIterable = Stream.from("word");

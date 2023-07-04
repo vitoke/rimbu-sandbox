@@ -4,7 +4,7 @@ import {
   SortedMultiSet,
   List
 } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const stream = Stream.of(1, 2, 3).repeat(3);
 

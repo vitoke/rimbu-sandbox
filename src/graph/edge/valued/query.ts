@@ -1,5 +1,5 @@
 import { EdgeValuedGraphSorted } from "@rimbu/core";
-import { log, subject } from "../../../utils/log";
+import { log, subject } from "../../../utils/log.mjs";
 
 const graph = EdgeValuedGraphSorted.of(
   [1, 1, "a"],

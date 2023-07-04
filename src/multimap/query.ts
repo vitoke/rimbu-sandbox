@@ -1,5 +1,5 @@
 import { SortedMultiMapSortedValue } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const multiMap = SortedMultiMapSortedValue.of(
   [1, "a"],

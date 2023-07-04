@@ -1,5 +1,5 @@
 import { SortedTableSortedColumn } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const tableFromValues = SortedTableSortedColumn.of(
   [1, "a", true],

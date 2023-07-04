@@ -1,5 +1,5 @@
 import { List } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const list = List.of(0, 1, 2, 3, 4, 5, 6);
 

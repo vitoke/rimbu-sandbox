@@ -1,5 +1,5 @@
 import { Reducer, Stream } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const values = Stream.randomInt(0, 100).take(20);
 // prevent every iteration from giving new values

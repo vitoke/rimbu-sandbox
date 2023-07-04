@@ -1,5 +1,5 @@
 import { BiMap } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const biMapFromValues = BiMap.of(
   [1, "a"],

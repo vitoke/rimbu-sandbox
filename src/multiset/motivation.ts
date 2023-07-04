@@ -1,5 +1,5 @@
 import { SortedMultiSet } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const sentence =
   "sometimes we would like to know the characters and their amounts in a sentence";

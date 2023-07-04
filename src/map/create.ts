@@ -1,5 +1,5 @@
 import { SortedMap } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const mapFromValues = SortedMap.of(
   [1, "a"],

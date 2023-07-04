@@ -1,5 +1,5 @@
 import { Deep, Tuple } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const personAge1 = Deep.protect(["John", 25]);
 // inferred type (too loose):

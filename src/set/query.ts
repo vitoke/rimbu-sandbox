@@ -1,5 +1,5 @@
 import { SortedSet } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const set = SortedSet.of(1, 3, 5, 7, 9);
 

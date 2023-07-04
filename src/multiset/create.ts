@@ -1,5 +1,5 @@
 import { SortedMultiSet } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const msFromValues = SortedMultiSet.of(
   1,

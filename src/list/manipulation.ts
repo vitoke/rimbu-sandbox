@@ -1,5 +1,5 @@
 import { List, Stream } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const values = Stream.range({ amount: 10 });
 const list = List.from(values);

@@ -1,5 +1,5 @@
 import { ArrowGraphSorted } from "@rimbu/core";
-import { log, subject } from "../../../utils/log";
+import { log, subject } from "../../../utils/log.mjs";
 
 const builder = ArrowGraphSorted.builder<
   number

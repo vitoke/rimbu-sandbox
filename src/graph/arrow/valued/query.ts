@@ -1,5 +1,5 @@
 import { ArrowValuedGraphSorted } from "@rimbu/core";
-import { log, subject } from "../../../utils/log";
+import { log, subject } from "../../../utils/log.mjs";
 
 const graph = ArrowValuedGraphSorted.of(
   [1, 1, "a"],

@@ -2,7 +2,7 @@ import {
   SortedMultiMapSortedValue,
   Stream
 } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const words = Stream.of(
   "rimbu",

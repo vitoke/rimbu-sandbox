@@ -1,5 +1,5 @@
 import { SortedBiMultiMap } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const bmmFromValues = SortedBiMultiMap.of(
   [1, "a"],

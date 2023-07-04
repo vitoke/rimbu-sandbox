@@ -1,5 +1,5 @@
 import { SortedMap } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 const builder = SortedMap.builder<
   number,

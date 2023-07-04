@@ -1,5 +1,5 @@
 import { AsyncStream, Stream } from "@rimbu/core";
-import { log, subject } from "../utils/log";
+import { log, subject } from "../utils/log.mjs";
 
 subject("Query AsyncStream");
 
